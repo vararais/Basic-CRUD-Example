@@ -1,0 +1,137 @@
+body{
+    margin: 0 !important;
+    padding: 0 !important;
+    background-image: url(img/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* ------Header Start----------- */
+
+
+.backg{
+    width: 100%;
+    height: 100vh;
+    /* background: rgba(255, 255, 255, 0);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1.9px);
+    -webkit-backdrop-filter: blur(1.9px); */
+}
+
+
+
+.header{
+    width: 100%;
+    height: 80px !important;
+    background: rgba(194,194,194,255);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.9px);
+    -webkit-backdrop-filter: blur(5px);
+    display: flex;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Tapestry', cursive;
+    letter-spacing: 2px;
+    }
+
+table{
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+}
+
+.headline{
+    height: 50px;
+    text-align: center;
+    background: rgba(194,194,194,255);
+    border: 1px solid rgba(194,194,194,255);
+    border-bottom: 0px;
+    font-family: 'Carter One', cursive;
+
+    font-size: 15px     ;
+
+}
+
+table td{
+    width: 100px !important;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    font-family: 'Jockey One', sans-serif;
+}
+
+.tableContent:hover{
+    background-color: rgba(194,194,194,255);
+}
+
+.add:hover{
+    background-color: rgba(194,194,194,255);
+}
+.edit:hover{
+    background-color: rgba(194,194,194,255);
+}
+
+#NewEmployee{
+    font-family: 'Carter One', cursive;
+
+}
+
+.btn{
+    border: 2px solid black !important;
+}
+.btn:hover{
+    background-color: rgba(194,194,194,255);
+
+}
+
+#editEmployee{
+    font-family: 'Carter One', cursive;
+
+}
+
+@media only screen and (min-width:550px) and (max-width:750px) {
+
+    .headline{
+        font-size: 12px
+    }
+
+    .add{
+        font-size: 12px;
+    }
+
+    table td{
+        font-size: 12px;
+    }
+
+}
+
+@media only screen and (max-width:550px){
+    .headline{
+        font-size: 8px;
+        width: 55px !important;
+
+    }
+
+    table td{
+        padding: 5px;
+    }
+    .add{
+
+        font-size: 10px;
+    }
+
+    .tableContent td{
+        font-size: 8px;
+        width: 55px !important;
+    }
+
+}

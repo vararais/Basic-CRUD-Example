@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tapestry&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="backg">
+      <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12 header mt-5">
+                <h1>
+                    Manage Employees
+                </h1>
+   
+            </div>
+        </div>
+        <div class="row mt-5" >
+            <div class="col-md-12 m-auto" >
+                <table class="tableBox" id="content">
+                    <thead>
+                      <tr class="headline">
+                        <th scope="col">ID</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">
+                          <button class="add">
+                            <i class="fa-solid fa-plus"></i>
+                            New Employee
+                        </button> 
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody class="mt-2" id="tbody">
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+    </div>
+  <!-- Modal -->
+  <div class="modal fade" id="NewEmployee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New Employee</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <div class="mb-3">
+                <label for="addFirstName" class="form-label" >First Name</label>
+                <input type="text" autocomplete="off" class="form-control"  id="addFirstName" placeholder="First Name">
+            </div>
+            <div class="mb-3">
+                <label for="addLastName" class="form-label" >Last Name</label>
+                <input type="text" autocomplete="off" class="form-control" id="addLastName"  placeholder="Last Name">
+            </div>
+            <div class="mb-3">
+                <label for="addEmail" class="form-label" >E-mail</label>
+                <input type="email" autocomplete="off" class="form-control" id="addEmail"  placeholder="E-mail">
+            </div>
+            <div class="mb-3">
+                <label for="addPhone" class="form-label" >Phone</label>
+                <input type="tel" autocomplete="off" class="form-control" id="addPhone"  placeholder="Phone">
+            </div>
+            <div class="mb-3">
+                <label for="addLocation" class="form-label">Location</label>
+                <input type="text" autocomplete="off" class="form-control"  id="addLocation" placeholder="Location">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn" id="addBtn">Add New Employee</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="editEmployee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Change Employee Info</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <div class="mb-3">
+                <label for="editFirstName" class="form-label" >First Name</label>
+                <input type="text" autocomplete="off" class="form-control"  id="editFirstName" placeholder="First Name">
+            </div>
+            <div class="mb-3">
+                <label for="editLastName" class="form-label" >Last Name</label>
+                <input type="text" autocomplete="off" class="form-control" id="editLastName"  placeholder="Last Name">
+            </div>
+            <div class="mb-3">
+                <label for="editEmail" class="form-label" >E-mail</label>
+                <input type="email" autocomplete="off" class="form-control" id="editEmail"  placeholder="E-mail">
+            </div>
+            <div class="mb-3">
+                <label for="editPhone" class="form-label" >Phone</label>
+                <input type="text" autocomplete="off" class="form-control" id="editPhone"  placeholder="Phone">
+            </div>
+            <div class="mb-3">
+                <label for="editLocation" class="form-label">Location</label>
+                <input type="text" autocomplete="off" class="form-control"  id="editLocation" placeholder="Location">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn" id="saveBtn">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Script -->
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+</html>
